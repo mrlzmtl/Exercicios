@@ -13,7 +13,7 @@ let valor = parseFloat(prompt("Digite o valor de sua compra:"))
 if (valor <= 100.00) {
     alert("Sem desconto")
 } else if (valor > 100.00 && valor <= 200.00) {
-    alert("Desconto de 10%. Valor final de compra: " + Math.round(valor**0.9))
+    alert("Desconto de 10%. Valor final de compra: " + Math.round(valor*0.9))
 } else if (valor > 200.00){
-    alert("Desconto de 20%. Valor final de compra: " + Math.round(valor**0.8))
+    alert("Desconto de 20%. Valor final de compra: " + Math.round(valor*0.8))
 }
