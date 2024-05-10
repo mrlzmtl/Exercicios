@@ -1,4 +1,4 @@
-function pares() {
+const pares = () => {
     for (let contador = 1; contador <= 10; contador++) {
         if (contador % 2 == 0) {
             console.log(contador);
@@ -6,7 +6,7 @@ function pares() {
     }
 }
 
-function tabuada() {
+const tabuada = () => {
     let num = parseInt(prompt("Digite um número: "))
 
     for (let tab = 1; tab <= 10; tab++) {
@@ -14,7 +14,7 @@ function tabuada() {
     }
 }
 
-function maioridade() {
+const maioridade = () => {
     let idade = parseInt(prompt("Digite sua idade: "))
 
     while (idade < 18) {
@@ -26,7 +26,7 @@ function maioridade() {
     }
 }
 
-function notas() {
+const notas = () => {
     let nota1 = parseFloat(prompt("Digite a primeira nota:"))
     let nota2 = parseFloat(prompt("Digite a segunda nota:"))
     let nota3 = parseFloat(prompt("Digite a terceira nota:"))
@@ -36,40 +36,40 @@ function notas() {
     let media = total / 4
 
     if (media >= 7.0) {
-        alert("APROVADO")
+        console.log("APROVADO")
     }
 
     if (media < 7.0 && media > 5.0) {
-        alert("RECUPERAÇÃO")
+        console.log("RECUPERAÇÃO")
     }
 
     if (media < 5.0) {
-        alert("REPROVADO")
+        console.log("REPROVADO")
     }
 }
 
-function imcCalculo() {
+const imcCalculo = () => {
     let peso = parseFloat(prompt("Digite o seu peso em kg: "))
     let altura = parseFloat(prompt("Digite a sua altura em metros: "))
 
     let imc = peso / (altura * altura)
 
     if (imc < 18.5) {
-        alert("Abaixo do peso")
+        console.log("Abaixo do peso")
     } else if (imc >= 18.5 && imc <= 24.9) {
-        alert("Peso normal")
+        console.log("Peso normal")
     } else if (imc >= 25.0 && imc <= 29.9) {
-        alert("Sobre peso")
+        console.log("Sobre peso")
     } else if (imc >= 30.0 && imc <= 34.9) {
-        alert("Obesidade grau 1")
+        console.log("Obesidade grau 1")
     } else if (imc >= 35.0 && imc <= 39.9) {
-        alert("Obesidade grau 2")
+        console.log("Obesidade grau 2")
     } else if (imc > 40.0) {
-        alert("Obesidade grau 3")
+        console.log("Obesidade grau 3")
     }
 }
 
-function login() {
+const login = () => {
     let username = prompt("Informe o nome de usuário: ")
     let senha = prompt("Informe a senha: ")
 
@@ -80,33 +80,37 @@ function login() {
     }
 }
 
-let opcao = parseInt(prompt("Escolha de 1 a 6 para executar um exercício: \n1 - Pares\n2 - Tabuada\n3 - Maioridade\n4 - Média de notas\n5 - Cálculo de IMC\n6 - Login\nDigite 0 para sair"))
+let opcao;
 
-switch (opcao) {
-    case 1:
-        pares()
-        break;
-        
-    case 2:
-        tabuada()
-        break;
-
-    case 3:
-        maioridade()
-        break;
-
-    case 4:
-        notas()
-        break;
-
-    case 5:
-        imcCalculo()
-        break;
-
-    case 6:
-        login()
-        break;
-
-    default:
-        break;
-}
+do {
+    opcao = parseInt(prompt("Escolha de 1 a 6 para executar um exercício: \n1 - Pares\n2 - Tabuada\n3 - Maioridade\n4 - Média de notas\n5 - Cálculo de IMC\n6 - Login\nDigite 0 para sair"))
+    
+    switch (opcao) {
+        case 1:
+            pares()
+            break;
+            
+        case 2:
+            tabuada()
+            break;
+    
+        case 3:
+            maioridade()
+            break;
+    
+        case 4:
+            notas()
+            break;
+    
+        case 5:
+            imcCalculo()
+            break;
+    
+        case 6:
+            login()
+            break;
+    
+        default:
+            break;
+    }
+} while (opcao != 0);
